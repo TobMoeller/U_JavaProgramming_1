@@ -1,6 +1,7 @@
 package de.tobias_moeller.jpm;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -8,10 +9,26 @@ public class Main {
 	public static void main(String[] args) {
 		
 		new Section8();
+		new Section9();
 		Section.chooseSection();
+//		testit();
 	}
-		
+	
+	public static void testit() {
+		String ta = "A ";
+		ta = ta.concat("B ");
+		System.out.println(ta);
+		String tb = "C ";
+		ta = ta.concat(tb);
+		System.out.println(ta);
+		ta.replace('C', 'D');
+		System.out.println(ta);
+		ta = ta.concat(tb);
+		System.out.println(ta);
+	}
+	
 }
+
 
 class Section1 extends Section {
 	public Section1() {
@@ -21,6 +38,7 @@ class Section1 extends Section {
 	
 	@Override
 	public boolean executeMethod(int chosen) {
+		
 		switch (chosen) {
 			case 1:
 				testMethod1();

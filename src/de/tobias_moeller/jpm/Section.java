@@ -3,7 +3,7 @@ package de.tobias_moeller.jpm;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Section {
+public abstract class Section {
 	private static ArrayList<Section> sections = new ArrayList<Section>();
 	private String name;
 	protected String[] methods;
@@ -22,7 +22,7 @@ public class Section {
 			}
 			int chosen = userInput();
 			if (chosen > 0 && chosen <= sections.size()) {
-				sections.get(chosen-1).chooseMethod();
+				sections.get(chosen - 1).chooseMethod();
 			} else {
 				System.out.println("Programm beendet");
 				break;
@@ -45,8 +45,8 @@ public class Section {
 		do {
 			System.out.println("\n" + this);
 			System.out.println("(0) - Zurück");
-			printMethods();
-			cont = executeMethod(userInput());
+			this.printMethods();
+			cont = this.executeMethod(userInput());
 		} while (cont);
 		
 	}
